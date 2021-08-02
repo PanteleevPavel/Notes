@@ -1,0 +1,62 @@
+package com.example.notes;
+
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
+
+import java.util.ArrayList;
+
+public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewHolder> {
+
+    private final ArrayList<String> dataSource;
+    private OnItemClickListener listener;
+
+    public ItemAdapter(ArrayList<String> dataSource) {
+        this.dataSource = dataSource;
+    }
+
+    @NonNull
+    @Override
+    public ItemViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item, parent, false);
+        return new ItemViewHolder(view);
+    }
+
+    @Override
+    public void onBindViewHolder(@NonNull ItemAdapter.ItemViewHolder holder, int position) {
+        holder.getTextView().setText(dataSource.get(position));
+    }
+
+    @Override
+    public int getItemCount() {
+        return dataSource.size();
+    }
+
+    public void setListener(@NonNull OnItemClickListener listener) {
+        this.listener = listener;
+    }
+
+    interface OnItemClickListener {
+        void onItemClick(int position);
+    }
+
+    public class ItemViewHolder extends RecyclerView.ViewHolder {
+
+        private final TextView textView;
+
+        public ItemViewHolder(@NonNull View itemView) {
+            super(itemView);
+            textView = itemView.findViewById(R.id.textView);
+            textView.setOnClickListener(v ->
+                    listener.onItemClick(getAdapterPosition()));
+        }
+
+        public TextView getTextView() {
+            return textView;
+        }
+    }
+}
