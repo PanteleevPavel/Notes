@@ -6,7 +6,7 @@ import androidx.annotation.NonNull;
 
 public class DataProvider {
 
-    public Note[] getData(@NonNull Resources resources) {
+    public static Note[] getData(@NonNull Resources resources) {
         return new Note[]{
                 new Note(
                         1,

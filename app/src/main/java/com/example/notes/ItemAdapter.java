@@ -8,14 +8,12 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.util.ArrayList;
-
 public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewHolder> {
 
-    private final ArrayList<String> dataSource;
+    private final CardSource dataSource;
     private OnItemClickListener listener;
 
-    public ItemAdapter(ArrayList<String> dataSource) {
+    public ItemAdapter(CardSource dataSource) {
         this.dataSource = dataSource;
     }
 
@@ -28,7 +26,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull ItemAdapter.ItemViewHolder holder, int position) {
-        holder.getTextView().setText(dataSource.get(position));
+        holder.bind(dataSource.getCardData(position));
     }
 
     @Override
@@ -40,23 +38,24 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewHolder
         this.listener = listener;
     }
 
-    interface OnItemClickListener {
-        void onItemClick(int position);
-    }
-
     public class ItemViewHolder extends RecyclerView.ViewHolder {
 
-        private final TextView textView;
+        private final TextView name;
+        private final TextView description;
 
         public ItemViewHolder(@NonNull View itemView) {
             super(itemView);
-            textView = itemView.findViewById(R.id.textView);
-            textView.setOnClickListener(v ->
-                    listener.onItemClick(getAdapterPosition()));
+            name = itemView.findViewById(R.id.name);
+            description = itemView.findViewById(R.id.description);
         }
 
-        public TextView getTextView() {
-            return textView;
+        public void bind(Note note) {
+            name.setText(note.getNoteName());
+            description.setText(note.getNoteDescription());
         }
+    }
+
+    interface OnItemClickListener {
+        void onItemClick(int position);
     }
 }

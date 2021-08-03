@@ -24,7 +24,9 @@ public class MainActivity extends AppCompatActivity {
             dataSource.add(i, getResources().getStringArray(R.array.notes)[i]);
         }
 
-        ItemAdapter adapter = new ItemAdapter(dataSource);
+        CardSource cardSource = new CardSourceImpl(this);
+
+        ItemAdapter adapter = new ItemAdapter(cardSource);
 
         recyclerView.setHasFixedSize(true);
         recyclerView.setAdapter(adapter);
