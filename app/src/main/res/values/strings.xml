@@ -1,3 +1,35 @@
 <resources>
     <string name="app_name">Notes</string>
+    <string name="name1">Список покупок</string>
+    <string name="name2">Стихи</string>
+    <string name="name3">Планы на день</string>
+    <string name="name4">Куда хочу поехать отдыхать</string>
+    <string name="name5">Дни рождения родственников</string>
+    <string name="description1">
+        1 - Картошка\n
+        2 - Молоко\n
+        3 - Сосиски
+    </string>
+    <string name="description2">
+        Я вас любил\n
+        Любовь ещё быть может\n
+        В душе моей угасла не совсем…\n
+        Но пусть она Вас больше не тревожит!\n
+        Я не хочу печалить Вас ничем.
+    </string>
+    <string name="description3">
+        1 - Покормить кота\n
+        2 - Поработать\n
+        3 - Покормить кота\n
+        4 - Проветриться\n
+        5 - Покормить кота
+    </string>
+    <string name="description4">
+        А почему в Египет едет ОН, а не ЯЯЯ?
+    </string>
+    <string name="description5">
+        13.03.1953 - Баба Валя\n
+        15.05.1955 - Баба Надя\n
+        17.07.1977 - Дядя Олег
+    </string>
 </resources>
