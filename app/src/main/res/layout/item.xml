@@ -4,9 +4,9 @@
     android:id="@+id/textView"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginVertical="15dp"
-    app:cardCornerRadius="50dp"
-    app:cardElevation="3dp">
+    android:layout_marginVertical="@dimen/cardMarginVertical"
+    app:cardCornerRadius="@dimen/cardCornerRadius"
+    app:cardElevation="@dimen/cardElevation">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -16,7 +16,7 @@
         <LinearLayout
 
             android:layout_width="match_parent"
-            android:layout_height="150dp"
+            android:layout_height="@dimen/layoutHeight"
             android:orientation="vertical">
 
             <TextView
@@ -24,7 +24,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
-                android:textSize="25dp" />
+                android:textSize="@dimen/nameTextSize" />
 
             <TextView
                 android:id="@+id/description"
@@ -32,8 +32,8 @@
                 android:layout_height="match_parent"
                 android:background="@android:color/darker_gray"
                 android:gravity="center_horizontal"
-                android:padding="10dp"
-                android:textSize="14dp" />
+                android:padding="@dimen/descriptionPaddingSize"
+                android:textSize="@dimen/descriptionSize" />
 
         </LinearLayout>
 

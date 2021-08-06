@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="descriptionSize">14sp</dimen>
+    <dimen name="descriptionPaddingSize">10dp</dimen>
+    <dimen name="nameTextSize">25sp</dimen>
+    <dimen name="layoutHeight">150dp</dimen>
+    <dimen name="cardElevation">3dp</dimen>
+    <dimen name="cardCornerRadius">50dp</dimen>
+    <dimen name="cardMarginVertical">15dp</dimen>
+</resources>
