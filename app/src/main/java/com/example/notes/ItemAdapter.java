@@ -38,7 +38,11 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewHolder
         this.listener = listener;
     }
 
-    public class ItemViewHolder extends RecyclerView.ViewHolder {
+    interface OnItemClickListener {
+        void onItemClick(int position);
+    }
+
+    public static class ItemViewHolder extends RecyclerView.ViewHolder {
 
         private final TextView name;
         private final TextView description;
@@ -53,9 +57,5 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewHolder
             name.setText(note.getNoteName());
             description.setText(note.getNoteDescription());
         }
-    }
-
-    interface OnItemClickListener {
-        void onItemClick(int position);
     }
 }

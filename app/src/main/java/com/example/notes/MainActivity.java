@@ -7,11 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.util.ArrayList;
-
 public class MainActivity extends AppCompatActivity {
-
-    private final ArrayList<String> dataSource = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,10 +15,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         RecyclerView recyclerView = findViewById(R.id.recyclerView);
-
-        for (int i = 0; i < getResources().getStringArray(R.array.notes).length; i++) {
-            dataSource.add(i, getResources().getStringArray(R.array.notes)[i]);
-        }
 
         CardSource cardSource = new CardSourceImpl(this);
 

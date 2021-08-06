@@ -2,14 +2,12 @@ package com.example.notes;
 
 import android.content.Context;
 
-public class CardSourceImpl implements CardSource{
+public class CardSourceImpl implements CardSource {
 
-    private final Context context;
     private Note[] notes;
 
     public CardSourceImpl(Context context) {
-        this.context = context;
-        notes = new Note[] {
+        notes = new Note[]{
                 new Note(
                         1,
                         context.getResources().getString(R.string.name1),
