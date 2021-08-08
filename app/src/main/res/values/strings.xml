@@ -32,4 +32,8 @@
         15.05.1955 - Баба Надя\n
         17.07.1977 - Дядя Олег
     </string>
+    <string name="add">add</string>
+    <string name="clear">clear</string>
+    <string name="update">update</string>
+    <string name="delete">delete</string>
 </resources>
